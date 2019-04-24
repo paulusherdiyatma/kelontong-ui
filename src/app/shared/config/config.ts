@@ -27,9 +27,9 @@ export interface IAppConfig {
 }
 
 export const AppConfig: IAppConfig = {
-    BASE_URL: "http://localhost:9020",
-    PRODUCT_URL: `http://localhost:9020/products`,
-    USER_URL: `http://localhost:9020/users`,
+    BASE_URL: "http://68.183.228.44:9020",
+    PRODUCT_URL: `http://68.183.228.44:9020/products`,
+    USER_URL: `http://68.183.228.44:9020/users`,
     DELETE_PRODUCT_CONFIRMATION: "Do you want to delete this product?",
     DELETE_PRODUCT_SUCCESS_INFO: "The Product has been successfully deleted",
     DELETE_USER_CONFIRMATION: "Do you want to delete this user?",
