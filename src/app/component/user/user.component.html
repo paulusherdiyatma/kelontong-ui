@@ -1,0 +1,16 @@
+<div class="row main-content">
+  <div class="col-md-4"></div>
+  <div class="col-md-4">
+    <user-form #userForm *ngIf="isRegister" (cancel)="cancelAddEditProduct()"></user-form>
+    <login *ngIf="!isRegister"></login>
+  </div>
+  <div class="col-md-4">
+
+    <div style="text-align:right;">
+      <button *ngIf="!isRegister" style="margin-right: 10px;font-weight: bold" type="button" class="btn btn-warning"
+        (click)="isRegister = true">Register</button>
+        <button *ngIf="isRegister" style="margin-right: 10px;font-weight: bold" type="button" class="btn btn-warning"
+        (click)="isRegister = false">Login</button>
+    </div>
+  </div>
+</div>

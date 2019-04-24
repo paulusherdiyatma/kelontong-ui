@@ -1,0 +1,9 @@
+
+<div style="text-align:right;">
+    <button style="margin-top: 10px;margin-right: 10px;font-weight: bold" *ngIf="paramService?.isAuthenticated" type="button" class="btn btn-warning"
+    (click)="logout()">Logout</button>
+</div>
+  <product *ngIf="paramService?.isAuthenticated"></product>
+  <user *ngIf="!paramService?.isAuthenticated"></user>
+
+  <custom-alert #customAlert></custom-alert>

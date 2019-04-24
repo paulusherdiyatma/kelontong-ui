@@ -1,0 +1,25 @@
+.add-user-content {
+    text-align: left;
+    margin-top: 20px;
+}
+
+.button-content {
+    text-align: right;
+}
+
+.title {
+    font-weight: bold;
+    font-size: 20px;
+    text-align: center;
+}
+
+.progress-content {
+    margin-top: 10px;
+}
+
+.margin-button {
+    margin-right: 5px;
+    margin-left: 5px;
+}
+
+

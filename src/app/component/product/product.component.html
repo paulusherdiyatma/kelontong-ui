@@ -1,0 +1,9 @@
+<div class="row main-content">
+  <div class="col-md-3"></div>
+  <div class="col-md-6">
+    <product-form #productFormCom (refreshList)="refreshList()" *ngIf="isAddEditProduct" (cancel)="cancelAddEditProduct()"></product-form>
+    <list-product #listProduct (editProduct)="editProduct($event)" (addProduct)="addProduct()"></list-product>
+  </div>
+  <div class="col-md-3"></div>
+</div>
+

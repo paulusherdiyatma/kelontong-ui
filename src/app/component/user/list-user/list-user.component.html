@@ -1,0 +1,42 @@
+<div class="add-user-button" *ngIf="!isAdd">
+  <button type="button" class="btn btn-primary" (click)="add()">{{config.ADD_USER}}</button>
+</div>
+
+<table class="table list-user-content">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">{{config.NAME}}</th>
+      <th scope="col">{{config.PRICE}}</th>
+      <th scope="col">{{config.ACTION}}</th>
+    </tr>
+  </thead>
+  <tbody *ngIf="!isGettingUser">
+    <tr *ngFor="let user of userList?.content">
+      <th style="width:10%;" scope="row">{{user.id}}</th>
+      <td style="width:45%;">{{user.name}}</td>
+      <td style="width:20%;">{{user.price | money}}</td>
+      <td style="width:25%;">
+        <button type="button" class="btn btn-primary" (click)="edit(user)"><i class="fa fa-edit"></i></button>
+        <span class="separator"></span>
+        <button type="button" class="btn btn-danger" (click)="delete(user)"><i class="fa fa-trash-alt"></i></button>
+      </td>
+    </tr>
+    <tr *ngIf="userList?.content.length == 0 && !isGettingUser">
+      <td colspan="4" align="center">
+        <span>Empty</span>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<ngb-pagination [(page)]="userList.number" [pageSize]="userList.size" [collectionSize]="userList.totalElements"
+  (pageChange)="loadPage($event)" [maxSize]="5" [boundaryLinks]="true"></ngb-pagination>
+<pre>Current page: {{userList.number}}</pre>
+
+<div class="progress progress-content" *ngIf="isGettingUser">
+  <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: 100%"
+    aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+</div>
+
+<custom-alert #customAlert></custom-alert>
