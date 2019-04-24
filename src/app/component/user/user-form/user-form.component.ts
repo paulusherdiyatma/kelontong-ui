@@ -81,7 +81,6 @@ export class UserFormComponent implements OnInit {
             this.userForm.reset();
             this.refreshList.emit();
             this.isNew = true;
-            this.customAlert.popup(AppConfig.SUBMIT_ADD_USER_SUCCESS_INFO);
             this.paramService.setToken(response.user.token);
             
         }, (error) => {
